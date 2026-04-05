@@ -32,6 +32,11 @@ function App() {
     setCurrentTasks((cur) => [task, ...cur]);
   }
 
+  function handleUpdateTasks(taskId: Task["id"], isDone: boolean) {
+    setCurrentTasks((cur) =>
+      cur.map((task) => (task.id === taskId ? { ...task, isDone } : task)),
+    );
+  }
   return (
     <div className="app">
       <TodolistItem
@@ -42,6 +47,8 @@ function App() {
         onFilterTasks={handleFilterTasks}
         onDeleteAllTasks={handleDeleteAllTasks}
         onCreateTask={handleAddTask}
+        onUpdateTasks={handleUpdateTasks}
+        currentFilter={currentFilter}
       />
     </div>
   );

@@ -6,3 +6,21 @@
 .app > div {
   margin-right: 50px;
 }
+
+.error {
+  border-color: #f00;
+  outline: none;
+  box-shadow: none;
+}
+
+.error-text {
+  color: #f00;
+}
+
+.active-filter {
+  background-color: lightgreen;
+}
+
+.is-checked {
+  opacity: 0.5;
+}
